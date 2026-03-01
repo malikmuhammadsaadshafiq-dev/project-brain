@@ -1,0 +1,139 @@
+{
+  "name": "project-brain",
+  "displayName": "Project Brain - AI Context Generator",
+  "description": "Stop wasting time explaining your codebase to AI. Auto-generate perfect context files that make Claude, Cursor & Copilot 10x smarter.",
+  "version": "1.0.0",
+  "publisher": "ProjectBrain",
+  "icon": "assets/icon.png",
+  "galleryBanner": {
+    "color": "#0f0f0f",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Machine Learning",
+    "Other",
+    "Programming Languages"
+  ],
+  "keywords": [
+    "ai",
+    "claude",
+    "cursor",
+    "copilot",
+    "context",
+    "documentation",
+    "claude.md",
+    "ai-coding",
+    "project-memory",
+    "architecture",
+    "windsurf",
+    "ai-assistant"
+  ],
+  "badges": [
+    {
+      "url": "https://img.shields.io/badge/AI%20Ready-100%25-brightgreen",
+      "href": "https://github.com/project-brain/vscode-extension",
+      "description": "AI Ready"
+    }
+  ],
+  "preview": false,
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "project-brain",
+          "title": "Project Brain",
+          "icon": "assets/brain-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "project-brain": [
+        {
+          "type": "webview",
+          "id": "projectBrain.panel",
+          "name": "Project Brain"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "projectBrain.initialize",
+        "title": "Initialize Project Brain",
+        "category": "Project Brain",
+        "icon": "$(add)"
+      },
+      {
+        "command": "projectBrain.regenerate",
+        "title": "Regenerate Claude.md",
+        "category": "Project Brain",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "projectBrain.sync",
+        "title": "Sync Project Brain",
+        "category": "Project Brain",
+        "icon": "$(sync)"
+      },
+      {
+        "command": "projectBrain.updateArchitecture",
+        "title": "Update Architecture Docs",
+        "category": "Project Brain"
+      },
+      {
+        "command": "projectBrain.openWizard",
+        "title": "Open Setup Wizard",
+        "category": "Project Brain"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "projectBrain.initialize",
+          "when": "workspaceFolderCount > 0"
+        },
+        {
+          "command": "projectBrain.regenerate",
+          "when": "workspaceFolderCount > 0"
+        },
+        {
+          "command": "projectBrain.sync",
+          "when": "workspaceFolderCount > 0"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "lint": "eslint src --ext ts",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "eslint": "^8.54.0",
+    "typescript": "^5.3.2",
+    "@vscode/vsce": "^2.22.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/project-brain/vscode-extension"
+  },
+  "homepage": "https://github.com/project-brain/vscode-extension#readme",
+  "bugs": {
+    "url": "https://github.com/project-brain/vscode-extension/issues"
+  },
+  "license": "MIT",
+  "qna": "marketplace"
+}
