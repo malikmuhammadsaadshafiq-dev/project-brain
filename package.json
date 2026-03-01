@@ -34,7 +34,7 @@
   "badges": [
     {
       "url": "https://img.shields.io/badge/AI%20Ready-100%25-brightgreen",
-      "href": "https://github.com/project-brain/vscode-extension",
+      "href": "https://github.com/malikmuhammadsaadshafiq-dev/project-brain",
       "description": "AI Ready"
     }
   ],
@@ -128,12 +128,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/project-brain/vscode-extension"
+    "url": "https://github.com/malikmuhammadsaadshafiq-dev/project-brain"
   },
-  "homepage": "https://github.com/project-brain/vscode-extension#readme",
+  "homepage": "https://github.com/malikmuhammadsaadshafiq-dev/project-brain#readme",
   "bugs": {
-    "url": "https://github.com/project-brain/vscode-extension/issues"
+    "url": "https://github.com/malikmuhammadsaadshafiq-dev/project-brain/issues"
   },
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "qna": "marketplace"
 }

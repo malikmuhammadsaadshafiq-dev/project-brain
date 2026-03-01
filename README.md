@@ -119,7 +119,7 @@ project-brain/
 
 ### From VSIX
 
-Download the latest `.vsix` from [Releases](https://github.com/project-brain/vscode-extension/releases) and install manually.
+Download the latest `.vsix` from [Releases](https://github.com/malikmuhammadsaadshafiq-dev/project-brain/releases) and install manually.
 
 ---
 
@@ -223,37 +223,23 @@ A: Yes. Edit any generated file. Your changes are preserved on sync.
 
 ---
 
-## Open Source & Free Forever
+## Free to Use
 
-- MIT Licensed
-- No accounts
-- No tracking
-- No premium tier
-- Just productivity
-
----
-
-## Contributing
-
-PRs welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
-
-```bash
-git clone https://github.com/project-brain/vscode-extension
-cd vscode-extension
-npm install
-npm run watch
-# Press F5 to launch Extension Development Host
-```
+- Free for personal use
+- No accounts required
+- No tracking or telemetry
+- Works 100% offline
+- Just pure productivity
 
 ---
 
-## Star History
+## Support
 
-If this saves you time, star the repo. It helps others find it.
+Having issues? [Open an issue](https://github.com/malikmuhammadsaadshafiq-dev/project-brain/issues) on GitHub.
 
 <p align="center">
-  <a href="https://github.com/project-brain/vscode-extension/stargazers">
-    <img src="https://img.shields.io/github/stars/project-brain/vscode-extension?style=social" alt="Stars">
+  <a href="https://github.com/malikmuhammadsaadshafiq-dev/project-brain/stargazers">
+    <img src="https://img.shields.io/github/stars/malikmuhammadsaadshafiq-dev/project-brain?style=social" alt="Stars">
   </a>
 </p>
 
