@@ -1,92 +1,115 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/malikmuhammadsaadshafiq-dev/project-brain/main/assets/banner.png" alt="Project Brain Banner" width="100%">
-</p>
+![Project Brain](https://raw.githubusercontent.com/malikmuhammadsaadshafiq-dev/project-brain/main/assets/banner.png)
 
-<p align="center">
-  <strong>Stop repeating yourself to AI. Start shipping faster.</strong>
-</p>
+# 🧠 Project Brain
 
-<p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=ProjectBrainDefined.project-brain"><img src="https://img.shields.io/visual-studio-marketplace/v/ProjectBrainDefined.project-brain?style=for-the-badge&color=6C5CE7&label=VERSION" alt="Version"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=ProjectBrainDefined.project-brain"><img src="https://img.shields.io/visual-studio-marketplace/d/ProjectBrainDefined.project-brain?style=for-the-badge&color=00B894&label=DOWNLOADS" alt="Downloads"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=ProjectBrainDefined.project-brain"><img src="https://img.shields.io/visual-studio-marketplace/r/ProjectBrainDefined.project-brain?style=for-the-badge&color=FDCB6E&label=RATING" alt="Rating"></a>
-  <a href="#"><img src="https://img.shields.io/badge/LICENSE-MIT-0984E3?style=for-the-badge" alt="License"></a>
-</p>
+### Stop repeating yourself to AI. Start shipping faster.
 
-<p align="center">
-  <em>Works with VS Code · Cursor · Windsurf · VSCodium · All VS Code Forks</em>
-</p>
+[![Version](https://img.shields.io/visual-studio-marketplace/v/ProjectBrainDefined.project-brain?style=for-the-badge&color=6C5CE7&label=VERSION)](https://marketplace.visualstudio.com/items?itemName=ProjectBrainDefined.project-brain)
+[![Downloads](https://img.shields.io/visual-studio-marketplace/d/ProjectBrainDefined.project-brain?style=for-the-badge&color=00B894&label=DOWNLOADS)](https://marketplace.visualstudio.com/items?itemName=ProjectBrainDefined.project-brain)
+[![Rating](https://img.shields.io/visual-studio-marketplace/r/ProjectBrainDefined.project-brain?style=for-the-badge&color=FDCB6E&label=RATING)](https://marketplace.visualstudio.com/items?itemName=ProjectBrainDefined.project-brain)
+[![License](https://img.shields.io/badge/LICENSE-MIT-0984E3?style=for-the-badge)](https://github.com/malikmuhammadsaadshafiq-dev/project-brain/blob/main/LICENSE)
+
+*Works with VS Code · Cursor · Windsurf · VSCodium · All VS Code Forks*
 
 ---
 
-## 😤 The Problem Every Developer Faces
+## 😤 The Problem
 
-You're using AI coding assistants. But **every single time**:
+You're using AI coding assistants. But **every single time:**
 
-```
-😩 "Let me explain my project structure again..."
-😩 "No, that's not how we do authentication here..."
-😩 "You forgot about the coding standards I mentioned 10 prompts ago..."
-```
+- 😩 *"Let me explain my project structure again..."*
+- 😩 *"No, that's not how we do authentication here..."*
+- 😩 *"You forgot about the coding standards I mentioned 10 prompts ago..."*
 
-> **You waste 40% of your AI interactions re-explaining context.** The AI forgets. You repeat. Productivity dies.
+**You waste 40% of your AI interactions re-explaining context.** The AI forgets. You repeat. Productivity dies.
 
 ---
 
 ## 🧠 The Solution: Give Your AI a Brain
 
-**Project Brain** automatically generates a structured memory system that AI assistants read **FIRST** before helping you.
+**Project Brain** automatically generates a structured memory system that AI assistants read **FIRST** before helping you — plus it **scans your actual codebase** to keep context accurate.
 
-```
-✅ One-time setup  ·  ✅ Permanent context  ·  ✅ Zero repetition
-```
+> ✅ One-time setup · ✅ Permanent context · ✅ Zero repetition
 
-<table>
-<tr>
-<td width="50%">
+---
 
-### ❌ Before Project Brain
+## 🚀 What Makes v3.0 Different
 
-```
-You: "Add a login button"
+Project Brain goes **far beyond** static context files. It has **live codebase intelligence:**
 
-AI: *Generates React code*
-You: "No, we use Vue here"
+### 🔬 Deep Scan — AI Context From Real Code
 
-AI: *Uses Options API*
-You: "We use Composition API"
+Scans your **actual codebase** and auto-generates a `CLAUDE.md` with real data:
 
-AI: *Ignores your auth system*
-You: *Sighs deeply* 😮‍💨
-```
+- ✅ Detects every file, language, and line of code
+- ✅ Finds API routes from Express, NestJS, FastAPI
+- ✅ Discovers React/Vue/Svelte components
+- ✅ Reads environment variables from `.env` files
+- ✅ Maps entry points, scripts, and dependencies
+- ✅ No templates — **real code analysis**
 
-</td>
-<td width="50%">
+> *Run: `Ctrl+Shift+P` → "Project Brain: Deep Scan Codebase"*
 
-### ✅ After Project Brain
+### 📊 Context Health Dashboard
 
-```
-You: "Add a login button"
+A beautiful dark-themed **visual dashboard** showing:
 
-AI: *Reads your context files*
-AI: *Vue 3 Composition API* ✓
-AI: *Integrates Supabase auth* ✓
-AI: *Follows your code style* ✓
+- 🎯 **Context Health Score** (0-100%) — how complete is your AI context?
+- 📈 **Codebase stats** — files, lines of code, languages breakdown
+- 🩺 **Per-file health checks** — is your `architecture.md` too thin? Is `api.md` missing?
+- 🔍 **API routes & components** detected in your code
 
-You: *Ships feature in 2 min* 🚀
-```
+> *Run: `Ctrl+Shift+P` → "Project Brain: Open Health Dashboard"*
 
-</td>
-</tr>
-</table>
+### 📋 Smart Context Copier
+
+One-click generates a **complete project summary** from your real codebase and copies it to clipboard:
+
+- 📦 Tech stack, dependencies, scripts
+- 📁 Directory structure and entry points
+- 🔌 API routes and components
+- 🔑 Environment variables
+
+**Paste into ANY AI chat** — ChatGPT, Claude web, Gemini, whatever you use.
+
+> *Run: `Ctrl+Shift+P` → "Project Brain: Copy Smart Context to Clipboard"*
+
+### 🧠 Status Bar Indicator
+
+Always visible in your status bar showing `🧠 Brain 🟢 85%` — click to open the dashboard.
 
 ---
 
 ## 📸 See It In Action
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/malikmuhammadsaadshafiq-dev/project-brain/main/assets/demo.png" alt="Project Brain Demo" width="90%">
-</p>
+![Project Brain Demo](https://raw.githubusercontent.com/malikmuhammadsaadshafiq-dev/project-brain/main/assets/demo.png)
+
+---
+
+## ❌ Before vs ✅ After
+
+**Before Project Brain:**
+
+```
+You: "Add a login button"
+AI:  *Generates React code when you use Vue*
+You: "No, we use Vue here"
+AI:  *Uses Options API when you use Composition*
+You: "We use Composition API..."
+AI:  *Ignores your auth system*
+You: *Sighs deeply* 😮‍💨
+```
+
+**After Project Brain:**
+
+```
+You: "Add a login button"
+AI:  *Reads your context files*
+AI:  *Vue 3 Composition API* ✓
+AI:  *Integrates Supabase auth* ✓
+AI:  *Follows your code style* ✓
+You: *Ships feature in 2 min* 🚀
+```
 
 ---
 
@@ -107,54 +130,26 @@ One command creates your entire AI context system:
    └── 🗺️ roadmap.md            ← Current priorities
 ```
 
-> **Every AI tool that supports context files will understand your project instantly.**
-
 ---
 
-## 🌍 Works Everywhere
+## 🌍 Compatibility
 
-<table>
-<tr>
-<td>
-
-### 🖥️ IDEs
-
-| IDE | Status |
-|-----|--------|
-| VS Code | ✅ Full Support |
-| Cursor | ✅ Full Support |
-| Windsurf | ✅ Full Support |
-| VSCodium | ✅ Full Support |
-| Any VS Code Fork | ✅ Full Support |
-
-</td>
-<td>
-
-### 🤖 AI Tools
-
-| AI Tool | Compatibility |
-|---------|--------------|
-| Claude Code | 🟢 Native |
-| Cursor AI | 🟢 Native |
-| GitHub Copilot | 🟢 Compatible |
-| Cody | 🟢 Compatible |
-| Continue | 🟢 Compatible |
-
-</td>
-</tr>
-</table>
+| IDEs | AI Tools |
+|------|----------|
+| ✅ VS Code | 🟢 Claude Code (Native) |
+| ✅ Cursor | 🟢 Cursor AI (Native) |
+| ✅ Windsurf | 🟢 GitHub Copilot |
+| ✅ VSCodium | 🟢 Cody |
+| ✅ Any VS Code Fork | 🟢 Continue |
 
 ---
 
 ## ⚡ Quick Start (60 Seconds)
 
-```
-Step 1  →  Open your project in VS Code
-Step 2  →  Click the 🧠 brain icon in the sidebar
-Step 3  →  Click "Initialize Project Brain"
-Step 4  →  Answer 4 simple questions
-Step 5  →  Done. Your AI now understands everything. 🎉
-```
+1. **Open your project** in VS Code
+2. **Click the 🧠 brain icon** in the sidebar
+3. **Click "Initialize"** or **"Deep Scan"** for auto-analysis
+4. **Done.** Your AI now understands everything. 🎉
 
 ---
 
@@ -169,67 +164,48 @@ Project Brain **automatically detects** your stack:
 | `Cargo.toml` | Rust |
 | `go.mod` | Go |
 
-> The wizard pre-fills everything. You just confirm.
-
 ---
 
-## ✨ Features
-
-| Feature | Description |
-|---------|-------------|
-| 🧠 **Sidebar Panel** | Quick access to all brain files at a glance |
-| 🧙 **Setup Wizard** | Guided 4-step process — no guesswork |
-| 🔄 **Auto-Sync** | Add files to `project-brain/`? Imports update automatically |
-| 🔁 **Regenerate** | Project evolved? One click to rebuild `CLAUDE.md` |
-| 📦 **Stack Templates** | Framework-specific templates matching your conventions |
-
----
-
-## 🎮 Commands
+## 🎮 All Commands
 
 Open Command Palette (`Ctrl+Shift+P`) and type:
 
 | Command | Description |
 |---------|-------------|
-| `Project Brain: Initialize` | 🚀 Launch setup wizard |
+| `Project Brain: Initialize` | 🚀 Launch guided setup wizard |
 | `Project Brain: Quick Initialize` | ⚡ Auto-detect and initialize |
+| `Project Brain: Deep Scan Codebase` | 🔬 Analyze real code → update CLAUDE.md |
+| `Project Brain: Open Health Dashboard` | 📊 Visual health score & stats |
+| `Project Brain: Copy Smart Context` | 📋 Copy project context to clipboard |
 
 ---
 
 ## 📊 The Math
 
-| | Without Project Brain | With Project Brain |
+| | Without Brain | With Brain |
 |---|---|---|
 | ⏱️ Context per AI chat | 5 min | **0 min** |
 | 💬 AI chats per day | 10 | 10 |
 | 📉 Wasted daily | **50 min** | **0 min** |
 | 📉 Wasted weekly | **4+ hours** | **0 hours** |
 
-### **That's 200+ hours per year you're getting back.** ⏰
+**That's 200+ hours per year you're getting back.** ⏰
 
 ---
 
 ## ❓ FAQ
 
-<details>
-<summary><strong>Does this slow down my IDE?</strong></summary>
+**Does this slow down my IDE?**
 No. It activates only when needed, then sleeps. Zero performance impact.
-</details>
 
-<details>
-<summary><strong>What if I already have a CLAUDE.md?</strong></summary>
-We detect it and won't overwrite. You can manually regenerate if you want.
-</details>
+**What if I already have a CLAUDE.md?**
+Deep Scan will regenerate it with real data. You can always undo.
 
-<details>
-<summary><strong>Does it work offline?</strong></summary>
+**Does it work offline?**
 100%. Everything is local. No external calls. No telemetry.
-</details>
 
-<details>
-<summary><strong>Can I customize the templates?</strong></summary>
+**Can I customize the templates?**
 Yes. Edit any generated file. Your changes are preserved on sync.
-</details>
 
 ---
 
@@ -241,8 +217,8 @@ Yes. Edit any generated file. Your changes are preserved on sync.
 > *"Setup took 45 seconds. Now Claude actually understands my monorepo."*
 > — **Startup CTO**
 
-> *"The agent-rules.md alone saved me hours of AI debugging nonsense."*
-> — **Solo Indie Hacker**
+> *"The Deep Scan feature is a game-changer. It found 47 API routes I forgot to document."*
+> — **Full-Stack Developer**
 
 ---
 
@@ -260,26 +236,14 @@ Yes. Edit any generated file. Your changes are preserved on sync.
 
 Having issues? [Open an issue](https://github.com/malikmuhammadsaadshafiq-dev/project-brain/issues) on GitHub.
 
-<p align="center">
-  <a href="https://github.com/malikmuhammadsaadshafiq-dev/project-brain/stargazers">
-    <img src="https://img.shields.io/github/stars/malikmuhammadsaadshafiq-dev/project-brain?style=social" alt="Stars">
-  </a>
-</p>
+[![GitHub Stars](https://img.shields.io/github/stars/malikmuhammadsaadshafiq-dev/project-brain?style=social)](https://github.com/malikmuhammadsaadshafiq-dev/project-brain/stargazers)
 
 ---
 
-<p align="center">
-  <strong>Stop explaining. Start shipping. 🚀</strong>
-</p>
+**Stop explaining. Start shipping. 🚀**
 
-<p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=ProjectBrainDefined.project-brain">
-    <img src="https://img.shields.io/badge/Install%20Now-VS%20Code%20Marketplace-007ACC?style=for-the-badge&logo=visual-studio-code" alt="Install from Marketplace">
-  </a>
-</p>
+[![Install Now](https://img.shields.io/badge/Install%20Now-VS%20Code%20Marketplace-007ACC?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=ProjectBrainDefined.project-brain)
 
 ---
 
-<p align="center">
-  Made with 🧠 by developers who got tired of repeating themselves.
-</p>
+*Made with 🧠 by developers who got tired of repeating themselves.*
