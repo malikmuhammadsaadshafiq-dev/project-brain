@@ -2,7 +2,7 @@
   "name": "project-brain",
   "displayName": "Project Brain",
   "description": "Generate AI-native project context files for Claude, Cursor, Copilot & more",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "license": "MIT",
   "publisher": "ProjectBrainDefined",
   "icon": "assets/icon.png",
@@ -18,7 +18,8 @@
     "vscode": "^1.74.0"
   },
   "categories": [
-    "Other"
+    "Other",
+    "Visualization"
   ],
   "keywords": [
     "ai",
@@ -26,11 +27,17 @@
     "cursor",
     "copilot",
     "context",
-    "documentation"
+    "documentation",
+    "codebase",
+    "analyzer",
+    "dashboard"
   ],
   "activationEvents": [
     "onCommand:projectBrain.init",
     "onCommand:projectBrain.quickInit",
+    "onCommand:projectBrain.deepScan",
+    "onCommand:projectBrain.dashboard",
+    "onCommand:projectBrain.copyContext",
     "onView:projectBrainTree"
   ],
   "main": "./out/extension.js",
@@ -38,11 +45,28 @@
     "commands": [
       {
         "command": "projectBrain.init",
-        "title": "Project Brain: Initialize"
+        "title": "Project Brain: Initialize",
+        "icon": "$(add)"
       },
       {
         "command": "projectBrain.quickInit",
-        "title": "Project Brain: Quick Initialize (Auto-detect)"
+        "title": "Project Brain: Quick Initialize (Auto-detect)",
+        "icon": "$(zap)"
+      },
+      {
+        "command": "projectBrain.deepScan",
+        "title": "Project Brain: Deep Scan Codebase",
+        "icon": "$(search)"
+      },
+      {
+        "command": "projectBrain.dashboard",
+        "title": "Project Brain: Open Health Dashboard",
+        "icon": "$(dashboard)"
+      },
+      {
+        "command": "projectBrain.copyContext",
+        "title": "Project Brain: Copy Smart Context to Clipboard",
+        "icon": "$(clippy)"
       }
     ],
     "viewsContainers": {
