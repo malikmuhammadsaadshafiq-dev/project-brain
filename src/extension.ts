@@ -552,7 +552,7 @@ class BrainTreeProvider implements vscode.TreeDataProvider<BrainItem> {
     private _onDidChangeTreeData = new vscode.EventEmitter<BrainItem | undefined>();
     readonly onDidChangeTreeData = this._onDidChangeTreeData.event;
 
-    constructor(private workspaceRoot: string | undefined) {}
+    constructor(private workspaceRoot: string | undefined) { }
 
     refresh(): void {
         this._onDidChangeTreeData.fire(undefined);
@@ -640,7 +640,13 @@ class BrainItem extends vscode.TreeItem {
 
 
 // ============================================================
-// TEMPLATES (Enhanced with real data)
+// TEMPLATES — Boris Cherny Best Practices (2026)
+// Based on the official CLAUDE.md guide:
+// - ~100 lines / ~2.5k tokens (concise, not bloated)
+// - Verification = MOST important section
+// - @import architecture for modularity
+// - Agentic Loop: Gather → Plan → Act → Verify → Reflect → Improve
+// - Mistake-driven self-improvement via lessons.md
 // ============================================================
 
 interface ProjectConfig {
@@ -652,155 +658,305 @@ interface ProjectConfig {
     targetUsers?: string;
 }
 
-function getClaudeMdTemplate(config: ProjectConfig): string {
+function getPackageManagerCmd(workspaceRoot: string): { pm: string; run: string; install: string } {
+    if (fs.existsSync(path.join(workspaceRoot, 'pnpm-lock.yaml'))) { return { pm: 'pnpm', run: 'pnpm', install: 'pnpm install' }; }
+    if (fs.existsSync(path.join(workspaceRoot, 'bun.lockb'))) { return { pm: 'bun', run: 'bun', install: 'bun install' }; }
+    if (fs.existsSync(path.join(workspaceRoot, 'yarn.lock'))) { return { pm: 'yarn', run: 'yarn', install: 'yarn install' }; }
+    return { pm: 'npm', run: 'npm run', install: 'npm install' };
+}
+
+// ── CLAUDE.md — Master file (~80-100 lines, ~2.5k tokens) ──
+function getClaudeMdTemplate(config: ProjectConfig, workspaceRoot?: string): string {
+    const pmCmd = workspaceRoot ? getPackageManagerCmd(workspaceRoot) : { pm: 'npm', run: 'npm run', install: 'npm install' };
     return `# CLAUDE.md
+# ════════════════════════════════════════════════
+# This file is read automatically at the start of every Claude Code session.
+# Keep it under ~100 lines. Use @import for detailed rules.
+# ════════════════════════════════════════════════
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+## 1. Project Context
 
-## Project Overview
-
-**${config.name}** - ${config.description}
-
-## Tech Stack
+**${config.name}** — ${config.description || 'A software project'}
 
 - Frontend: ${config.frontend || 'Not specified'}
 - Backend: ${config.backend || 'Not specified'}
 - Database: ${config.database || 'Not specified'}
+- Package Manager: ${pmCmd.pm}
 
-## Build Commands
+## 2. Development Workflow
 
 \`\`\`bash
-# Add your build commands here
-npm install
-npm run dev
+# Install dependencies
+${pmCmd.install}
+
+# Development
+${pmCmd.run} dev
+
+# Build
+${pmCmd.run} build
+
+# Test
+${pmCmd.run} test
+
+# Lint
+${pmCmd.run} lint
 \`\`\`
 
-## Architecture
+## 3. Coding Rules & Conventions
 
-See [architecture.md](./project-brain/architecture.md) for detailed system design.
+- Never commit without running tests first
+- Never use \`any\` type — always define proper types
+- Never leave TODO comments without a linked task
+- Always handle errors explicitly — no silent catches
+- Always write self-documenting code — minimal comments
+- Follow existing patterns in the codebase before introducing new ones
 
-## Coding Standards
+@import ./project-brain/coding-standards.md
 
-See [coding-standards.md](./project-brain/coding-standards.md) for conventions.
+## 4. Verification ← MOST IMPORTANT
+
+Before marking ANY task as done, you MUST:
+1. Run the test suite: \`${pmCmd.run} test\`
+2. Run the linter: \`${pmCmd.run} lint\`
+3. Build succeeds: \`${pmCmd.run} build\`
+4. Verify the change works in browser/terminal with real execution
+5. Check for regressions in related functionality
+
+Never claim "done" without proof. Never skip verification.
+
+@import ./project-brain/verification.md
+
+## 5. Workflow Orchestration (10× Engineer)
+
+1. **Plan Mode** — Enter plan mode for any non-trivial task (3+ steps)
+2. **Subagents** — Use subagents liberally to keep main context clean
+3. **Self-Improvement** — After ANY correction: update lessons.md with the pattern
+4. **Verify Before Done** — Run tests, check logs, demonstrate correctness
+5. **Demand Elegance** — For non-trivial changes: "Is there a more elegant way?"
+6. **Autonomous Bug Fix** — When given a bug: just fix it. No hand-holding.
+
+@import ./project-brain/agent-rules.md
+
+## 6. Architecture & Imports
+
+@import ./project-brain/architecture.md
+@import ./project-brain/product.md
+@import ./tasks/lessons.md
 `;
 }
 
+// ── Product Overview ──
 function getProductMdTemplate(config: ProjectConfig): string {
     return `# Product Overview
 
-## Project Name
-${config.name}
+## Project: ${config.name}
 
-## Description
-${config.description}
+${config.description || 'Describe your project here.'}
 
 ## Target Users
-${config.targetUsers || 'Define your target users'}
+${config.targetUsers || '- Define your target users here'}
 
-## Key Features
-- Feature 1
-- Feature 2
-- Feature 3
+## Core Features
+- [ ] Feature 1 — describe what it does
+- [ ] Feature 2 — describe what it does
+- [ ] Feature 3 — describe what it does
+
+## Success Metrics
+- Metric 1: target value
+- Metric 2: target value
 `;
 }
 
+// ── Architecture ──
 function getArchitectureMdTemplate(config: ProjectConfig): string {
     return `# Architecture
 
-## Overview
+## System Overview
 
 ${config.name} follows a ${config.backend ? config.backend + ' backend' : 'standard'} architecture.
 
 ## Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| Frontend | ${config.frontend || 'TBD'} |
-| Backend | ${config.backend || 'TBD'} |
-| Database | ${config.database || 'TBD'} |
+| Layer | Technology | Version |
+|-------|-----------|--------|
+| Frontend | ${config.frontend || 'TBD'} | latest |
+| Backend | ${config.backend || 'TBD'} | latest |
+| Database | ${config.database || 'TBD'} | latest |
 
 ## Directory Structure
 
 \`\`\`
 src/
-├── components/
-├── services/
-├── utils/
-└── types/
+├── components/     # UI components
+├── services/       # Business logic
+├── utils/          # Shared utilities
+├── types/          # TypeScript types
+└── config/         # Configuration
 \`\`\`
+
+## Key Design Decisions
+
+1. **Decision**: reason and tradeoffs
+2. **Decision**: reason and tradeoffs
+
+## Data Flow
+
+User → Frontend → API → Service → Database → Response
 `;
 }
 
-function getStackMdTemplate(config: ProjectConfig): string {
-    return `# Technology Stack
-
-## Frontend
-- Framework: ${config.frontend || 'Not specified'}
-
-## Backend
-- Framework: ${config.backend || 'Not specified'}
-
-## Database
-- Database: ${config.database || 'Not specified'}
-
-## Development Tools
-- Package Manager: npm/yarn
-- Linting: ESLint
-- Testing: Jest
-`;
-}
-
+// ── Coding Standards (.claude/rules format) ──
 function getCodingStandardsMdTemplate(): string {
     return `# Coding Standards
 
-## Naming Conventions
-
-- Variables: camelCase
-- Functions: camelCase
-- Classes: PascalCase
+## Naming
+- Variables/functions: camelCase
+- Classes/components: PascalCase
 - Constants: UPPER_SNAKE_CASE
 - Files: kebab-case
+- Database columns: snake_case
 
-## Code Style
+## Style Rules
+- 2 space indentation
+- Single quotes for strings
+- Trailing commas in multi-line
+- Max line length: 100 characters
+- Explicit return types on public functions
 
-- Use 2 space indentation
-- Use single quotes for strings
-- Add trailing commas
-- Maximum line length: 100 characters
+## Never → Always Patterns
+- Never use \`var\` → always use \`const\` or \`let\`
+- Never use \`==\` → always use \`===\`
+- Never nest more than 3 levels → extract to functions
+- Never ignore errors → always handle or rethrow
+- Never use magic numbers → always use named constants
+- Never mutate function parameters → always return new values
 
-## Best Practices
-
-- Write self-documenting code
-- Keep functions small and focused
-- Handle errors appropriately
-- Write tests for critical paths
+## Git Commits
+- Use conventional commits: feat:, fix:, refactor:, docs:, test:
+- Keep commits atomic — one logical change per commit
+- Write descriptive commit messages
 `;
 }
 
+// ── Verification Rules ──
+function getVerificationMdTemplate(config: ProjectConfig, workspaceRoot?: string): string {
+    const pmCmd = workspaceRoot ? getPackageManagerCmd(workspaceRoot) : { pm: 'npm', run: 'npm run', install: 'npm install' };
+    return `# Verification Rules
+
+## This is the MOST IMPORTANT section (Boris Cherny)
+
+Never mark a task complete without proving it works.
+
+## Pre-Commit Checklist
+
+1. \`${pmCmd.run} test\` — all tests pass
+2. \`${pmCmd.run} lint\` — zero warnings
+3. \`${pmCmd.run} build\` — compiles cleanly
+4. Manual verification — the feature actually works
+5. No regressions — related features still work
+
+## For Bug Fixes (TDD)
+
+1. Write a failing test that reproduces the bug
+2. Fix the bug
+3. Confirm the test passes
+4. Check no other tests broke
+
+## For New Features
+
+1. Write tests first (or alongside)
+2. Verify in browser/terminal with real execution
+3. Check edge cases
+4. Verify error handling works
+
+## Ask Yourself
+
+"Would a staff engineer approve this PR?"
+If not, keep iterating.
+`;
+}
+
+// ── Agent Rules (Agentic Loop Protocol) ──
 function getAgentRulesMdTemplate(): string {
-    return `# Agent Development Rules
+    return `# Agent Rules — Agentic Loop Protocol
 
-## Workflow
+## The Loop: Gather → Plan → Act → Verify → Reflect → Improve
 
-1. **Understand** - Read existing code before modifying
-2. **Plan** - Break down tasks into small steps
-3. **Implement** - Write clean, focused code
-4. **Test** - Verify changes work correctly
-5. **Document** - Update docs if needed
+### 1. GATHER
+Read CLAUDE.md, tasks/lessons.md, relevant files, errors, and all context
+before touching any code.
 
-## Do's
+### 2. PLAN
+For any task > 30 min or 3+ steps: enter Plan Mode.
+Write a verifiable plan before coding.
+If something goes sideways, STOP and re-plan immediately.
 
-- Follow existing code patterns
-- Keep changes minimal and focused
-- Test your changes
-- Ask for clarification when needed
+### 3. ACT
+Make minimal, elegant, high-impact changes.
+One focused change at a time.
+Use subagents for research and parallel work.
 
-## Don'ts
+### 4. VERIFY RIGOROUSLY
+Run tests, build, check logs. Use diffs when relevant.
+Never claim "done" without proof of correctness.
 
-- Don't make sweeping changes
-- Don't ignore existing patterns
-- Don't skip testing
-- Don't add unnecessary dependencies
+### 5. REFLECT
+What worked? What failed? Why?
+Be honest about root cause before moving on.
+
+### 6. IMPROVE & LOOP
+Update CLAUDE.md and tasks/lessons.md with new rules.
+Repeat until success criteria are 100% met.
+
+## Behavioral Rules (NEVER break these)
+
+- Always start with a written plan
+- Break every task into < 30 min verifiable chunks
+- For bugs: write failing test → fix → make test pass (TDD)
+- After any correction: immediately add preventive rule to lessons.md
+- Never assume — always verify with real execution
+- One clarifying question maximum before starting work
+
+## The Ultimate Prompt
+
+"Fix this, then update your CLAUDE.md so you never make that mistake again."
+`;
+}
+
+// ── Lessons (Self-Improvement Memory) ──
+function getLessonsMdTemplate(): string {
+    return `# Lessons Learned
+
+This file is your self-improvement memory. After ANY correction or mistake,
+add a lesson here so it never happens again.
+
+## Format
+
+Date | Category | Lesson
+
+## Lessons
+
+<!-- Add lessons below as you work. Example: -->
+<!-- 2026-03-03 | testing | Always run integration tests before marking API changes done -->
+<!-- 2026-03-03 | patterns | Use the repository pattern for data access, not direct DB calls -->
+`;
+}
+
+// ── Todo (Active Work Planning) ──
+function getTodoMdTemplate(): string {
+    return `# Active Tasks
+
+## In Progress
+- [ ] Task description — estimated time
+
+## Up Next
+- [ ] Task description — estimated time
+
+## Blocked
+- [ ] Task description — reason blocked
+
+## Completed
+<!-- Move completed tasks here with date -->
 `;
 }
 
@@ -850,26 +1006,48 @@ function detectStackSync(workspaceRoot: string): Partial<ProjectConfig> {
 
 
 // ============================================================
-// BRAIN FILE GENERATION
+// BRAIN FILE GENERATION — Boris Cherny Structure
+// Creates: CLAUDE.md, project-brain/, tasks/, .claude/rules/
 // ============================================================
 
 async function generateBrain(workspaceRoot: string, config: ProjectConfig): Promise<void> {
+    // Create directory structure per Boris Cherny guide
     const brainDir = path.join(workspaceRoot, 'project-brain');
+    const tasksDir = path.join(workspaceRoot, 'tasks');
+    const claudeRulesDir = path.join(workspaceRoot, '.claude', 'rules');
     const docsDir = path.join(workspaceRoot, 'docs');
 
-    if (!fs.existsSync(brainDir)) { fs.mkdirSync(brainDir, { recursive: true }); }
-    if (!fs.existsSync(docsDir)) { fs.mkdirSync(docsDir, { recursive: true }); }
+    for (const dir of [brainDir, tasksDir, claudeRulesDir, docsDir]) {
+        if (!fs.existsSync(dir)) { fs.mkdirSync(dir, { recursive: true }); }
+    }
 
+    // Generate all files
     const files: [string, string][] = [
-        [path.join(workspaceRoot, 'CLAUDE.md'), getClaudeMdTemplate(config)],
+        // Master file — concise, ~80 lines, @imports the rest
+        [path.join(workspaceRoot, 'CLAUDE.md'), getClaudeMdTemplate(config, workspaceRoot)],
+
+        // Project brain detailed docs
         [path.join(brainDir, 'product.md'), getProductMdTemplate(config)],
         [path.join(brainDir, 'architecture.md'), getArchitectureMdTemplate(config)],
-        [path.join(brainDir, 'stack.md'), getStackMdTemplate(config)],
         [path.join(brainDir, 'coding-standards.md'), getCodingStandardsMdTemplate()],
+        [path.join(brainDir, 'verification.md'), getVerificationMdTemplate(config, workspaceRoot)],
         [path.join(brainDir, 'agent-rules.md'), getAgentRulesMdTemplate()],
+
+        // Tasks — self-improvement memory + active planning
+        [path.join(tasksDir, 'lessons.md'), getLessonsMdTemplate()],
+        [path.join(tasksDir, 'todo.md'), getTodoMdTemplate()],
+
+        // .claude/rules — modular rule files (auto-loaded by Claude Code)
+        [path.join(claudeRulesDir, 'coding-style.md'), getCodingStandardsMdTemplate()],
+        [path.join(claudeRulesDir, 'verification.md'), getVerificationMdTemplate(config, workspaceRoot)],
     ];
 
     for (const [filePath, content] of files) {
+        // Don't overwrite if file already exists and has content
+        if (fs.existsSync(filePath)) {
+            const existing = fs.readFileSync(filePath, 'utf8').trim();
+            if (existing.length > 50) { continue; } // Skip — user has customized this file
+        }
         fs.writeFileSync(filePath, content, 'utf8');
     }
 }
@@ -881,44 +1059,85 @@ async function generateBrain(workspaceRoot: string, config: ProjectConfig): Prom
 
 function generateClaudeMdFromScan(analysis: CodebaseAnalysis, workspaceRoot: string): string {
     const config = detectStackSync(workspaceRoot);
+    const pmCmd = getPackageManagerCmd(workspaceRoot);
     const topLangs = Object.entries(analysis.languages)
         .sort((a, b) => b[1] - a[1])
         .slice(0, 5)
         .map(([lang]) => lang)
         .join(', ');
 
+    // Build scripts section from actual package.json
+    const scriptEntries = Object.entries(analysis.scripts);
+    const testCmd = analysis.scripts['test'] ? `${pmCmd.run} test` : '# no test script found — add one!';
+    const lintCmd = analysis.scripts['lint'] ? `${pmCmd.run} lint` : '# no lint script found — add one!';
+    const buildCmd = analysis.scripts['build'] ? `${pmCmd.run} build` : '# no build script found';
+    const devCmd = analysis.scripts['dev'] || analysis.scripts['start'] ? `${pmCmd.run} ${analysis.scripts['dev'] ? 'dev' : 'start'}` : '# no dev script found';
+
     let md = `# CLAUDE.md
+# ════════════════════════════════════════════════
+# Auto-generated by Project Brain Deep Scan
+# This file is read automatically at the start of every Claude Code session.
+# Keep it concise. Use @import for detailed rules.
+# ════════════════════════════════════════════════
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-*Auto-generated by Project Brain Deep Scan.*
-
-## Project Overview
+## 1. Project Context
 
 **${config.name || path.basename(workspaceRoot)}** — ${config.description || 'A software project'}
 
-- **Languages**: ${topLangs}
-- **Files**: ${analysis.totalFiles} | **Lines**: ${analysis.totalLines.toLocaleString()}
-- **Branch**: ${analysis.gitBranch}
-- **Package Manager**: ${analysis.packageManager}
+- Languages: ${topLangs}
+- Frontend: ${config.frontend || 'N/A'}
+- Backend: ${config.backend || 'N/A'}
+- Database: ${config.database || 'N/A'}
+- Testing: ${analysis.testFramework}
+- Package Manager: ${pmCmd.pm}
+- Git Branch: ${analysis.gitBranch}
+- Codebase: ${analysis.totalFiles} files / ${analysis.totalLines.toLocaleString()} lines
 
-## Tech Stack
+## 2. Development Workflow
 
-| Layer | Technology |
-|-------|-----------|
-| Frontend | ${config.frontend || 'N/A'} |
-| Backend | ${config.backend || 'N/A'} |
-| Database | ${config.database || 'N/A'} |
-| Testing | ${analysis.testFramework} |
-
-## Directory Structure
-
+\`\`\`bash
+${pmCmd.install}
+${devCmd}
+${buildCmd}
+${testCmd}
+${lintCmd}
 \`\`\`
-${analysis.directories.slice(0, 15).map(d => `├── ${d}/`).join('\n')}
-\`\`\`
 
-## Entry Points
+## 3. Coding Rules & Conventions
 
-${analysis.entryPoints.length > 0 ? analysis.entryPoints.map(e => `- \`${e}\``).join('\n') : '- No standard entry points detected'}
+- Follow existing patterns in the codebase
+- Never commit without running tests
+- Never use \`any\` — define proper types
+- Always handle errors explicitly
+- Write self-documenting code
+
+@import ./project-brain/coding-standards.md
+
+## 4. Verification ← MOST IMPORTANT
+
+Before marking ANY task as done:
+1. \`${testCmd}\` — all tests pass
+2. \`${lintCmd}\` — zero warnings
+3. \`${buildCmd}\` — compiles cleanly
+4. Manual verification — the feature actually works
+5. No regressions — related features still work
+
+Never claim "done" without proof. Ask: "Would a staff engineer approve this?"
+
+## 5. Workflow Orchestration
+
+1. Plan Mode for non-trivial tasks (3+ steps)
+2. Subagents for research and parallel work
+3. After ANY correction → update tasks/lessons.md
+4. Verify before done — run tests, demonstrate correctness
+5. Demand elegance — "Is there a more elegant way?"
+6. Autonomous bug fixing — just fix it, no hand-holding
+
+## 6. Architecture & Imports
+
+@import ./project-brain/architecture.md
+@import ./project-brain/agent-rules.md
+@import ./tasks/lessons.md
 `;
 
     if (analysis.apiRoutes.length > 0) {
@@ -1120,4 +1339,4 @@ export function activate(context: vscode.ExtensionContext) {
     console.log('Project Brain activated!');
 }
 
-export function deactivate() {}
+export function deactivate() { }
