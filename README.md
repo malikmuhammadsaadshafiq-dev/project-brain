@@ -10,9 +10,9 @@
 
 <p align="center">
   <a href="#installation"><img src="https://img.shields.io/badge/Install-Free-brightgreen?style=for-the-badge" alt="Install Free"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=ProjectBrain.project-brain"><img src="https://img.shields.io/visual-studio-marketplace/v/ProjectBrain.project-brain?style=for-the-badge&color=blue" alt="Version"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=ProjectBrain.project-brain"><img src="https://img.shields.io/visual-studio-marketplace/d/ProjectBrain.project-brain?style=for-the-badge&color=purple" alt="Downloads"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=ProjectBrain.project-brain"><img src="https://img.shields.io/visual-studio-marketplace/r/ProjectBrain.project-brain?style=for-the-badge&color=yellow" alt="Rating"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=ProjectBrainDefined.project-brain"><img src="https://img.shields.io/visual-studio-marketplace/v/ProjectBrainDefined.project-brain?style=for-the-badge&color=blue" alt="Version"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=ProjectBrainDefined.project-brain"><img src="https://img.shields.io/visual-studio-marketplace/d/ProjectBrainDefined.project-brain?style=for-the-badge&color=purple" alt="Downloads"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=ProjectBrainDefined.project-brain"><img src="https://img.shields.io/visual-studio-marketplace/r/ProjectBrainDefined.project-brain?style=for-the-badge&color=yellow" alt="Rating"></a>
 </p>
 
 <p align="center">
@@ -248,7 +248,7 @@ Having issues? [Open an issue](https://github.com/malikmuhammadsaadshafiq-dev/pr
 </p>
 
 <p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=ProjectBrain.project-brain">
+  <a href="https://marketplace.visualstudio.com/items?itemName=ProjectBrainDefined.project-brain">
     <img src="https://img.shields.io/badge/Install%20Now-VS%20Code%20Marketplace-007ACC?style=for-the-badge&logo=visual-studio-code" alt="Install from Marketplace">
   </a>
 </p>
