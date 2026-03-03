@@ -12,9 +12,22 @@
   "engines": {
     "vscode": "^1.74.0"
   },
-  "categories": ["Other"],
-  "keywords": ["ai", "claude", "cursor", "copilot", "context", "documentation"],
-  "activationEvents": ["*"],
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "ai",
+    "claude",
+    "cursor",
+    "copilot",
+    "context",
+    "documentation"
+  ],
+  "activationEvents": [
+    "onCommand:projectBrain.init",
+    "onCommand:projectBrain.quickInit",
+    "onView:projectBrainTree"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
