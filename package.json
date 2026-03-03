@@ -2,7 +2,7 @@
   "name": "project-brain",
   "displayName": "Project Brain",
   "description": "Generate AI-native project context files for Claude, Cursor, Copilot & more",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "license": "MIT",
   "publisher": "ProjectBrainDefined",
   "icon": "assets/icon.png",

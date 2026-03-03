@@ -1,237 +1,262 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/malikmuhammadsaadshafiq-dev/project-brain/main/assets/icon.png" alt="Project Brain" width="128">
+  <img src="https://raw.githubusercontent.com/malikmuhammadsaadshafiq-dev/project-brain/main/assets/banner.png" alt="Project Brain Banner" width="100%">
 </p>
-
-<h1 align="center">Project Brain</h1>
 
 <p align="center">
   <strong>Stop repeating yourself to AI. Start shipping faster.</strong>
 </p>
 
 <p align="center">
-  <a href="#installation"><img src="https://img.shields.io/badge/Install-Free-brightgreen?style=for-the-badge" alt="Install Free"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=ProjectBrainDefined.project-brain"><img src="https://img.shields.io/visual-studio-marketplace/v/ProjectBrainDefined.project-brain?style=for-the-badge&color=blue" alt="Version"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=ProjectBrainDefined.project-brain"><img src="https://img.shields.io/visual-studio-marketplace/d/ProjectBrainDefined.project-brain?style=for-the-badge&color=purple" alt="Downloads"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=ProjectBrainDefined.project-brain"><img src="https://img.shields.io/visual-studio-marketplace/r/ProjectBrainDefined.project-brain?style=for-the-badge&color=yellow" alt="Rating"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=ProjectBrainDefined.project-brain"><img src="https://img.shields.io/visual-studio-marketplace/v/ProjectBrainDefined.project-brain?style=for-the-badge&color=6C5CE7&label=VERSION" alt="Version"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=ProjectBrainDefined.project-brain"><img src="https://img.shields.io/visual-studio-marketplace/d/ProjectBrainDefined.project-brain?style=for-the-badge&color=00B894&label=DOWNLOADS" alt="Downloads"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=ProjectBrainDefined.project-brain"><img src="https://img.shields.io/visual-studio-marketplace/r/ProjectBrainDefined.project-brain?style=for-the-badge&color=FDCB6E&label=RATING" alt="Rating"></a>
+  <a href="#"><img src="https://img.shields.io/badge/LICENSE-MIT-0984E3?style=for-the-badge" alt="License"></a>
 </p>
 
 <p align="center">
-  <em>Works with VS Code, Cursor, Windsurf, VSCodium & all VS Code forks</em>
+  <em>Works with VS Code · Cursor · Windsurf · VSCodium · All VS Code Forks</em>
 </p>
 
 ---
 
-## The Problem Every Developer Faces
+## 😤 The Problem Every Developer Faces
 
-You're using AI coding assistants. But every single time:
+You're using AI coding assistants. But **every single time**:
 
-- "Let me explain my project structure again..."
-- "No, that's not how we do authentication here..."
-- "You forgot about the coding standards I mentioned 10 prompts ago..."
+```
+😩 "Let me explain my project structure again..."
+😩 "No, that's not how we do authentication here..."
+😩 "You forgot about the coding standards I mentioned 10 prompts ago..."
+```
 
-**You waste 40% of your AI interactions re-explaining context.**
-
-The AI forgets. You repeat. Productivity dies.
+> **You waste 40% of your AI interactions re-explaining context.** The AI forgets. You repeat. Productivity dies.
 
 ---
 
-## The Solution: Give Your AI a Brain
+## 🧠 The Solution: Give Your AI a Brain
 
-**Project Brain** automatically generates a structured memory system that AI assistants read FIRST before helping you.
+**Project Brain** automatically generates a structured memory system that AI assistants read **FIRST** before helping you.
 
 ```
-One-time setup. Permanent context. Zero repetition.
+✅ One-time setup  ·  ✅ Permanent context  ·  ✅ Zero repetition
 ```
 
-### Before Project Brain
+<table>
+<tr>
+<td width="50%">
+
+### ❌ Before Project Brain
+
 ```
 You: "Add a login button"
-AI: *Generates React code when you use Vue*
+
+AI: *Generates React code*
 You: "No, we use Vue here"
-AI: *Uses Options API when you use Composition*
+
+AI: *Uses Options API*
 You: "We use Composition API"
+
 AI: *Ignores your auth system*
-You: *Sighs deeply*
+You: *Sighs deeply* 😮‍💨
 ```
 
-### After Project Brain
+</td>
+<td width="50%">
+
+### ✅ After Project Brain
+
 ```
 You: "Add a login button"
+
 AI: *Reads your context files*
-AI: *Generates perfect Vue 3 Composition API code*
-AI: *Integrates with your Supabase auth*
-AI: *Follows your exact coding standards*
-You: *Ships feature in 2 minutes*
+AI: *Vue 3 Composition API* ✓
+AI: *Integrates Supabase auth* ✓
+AI: *Follows your code style* ✓
+
+You: *Ships feature in 2 min* 🚀
 ```
+
+</td>
+</tr>
+</table>
 
 ---
 
-## What Gets Generated
+## 📸 See It In Action
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/malikmuhammadsaadshafiq-dev/project-brain/main/assets/demo.png" alt="Project Brain Demo" width="90%">
+</p>
+
+---
+
+## 📁 What Gets Generated
 
 One command creates your entire AI context system:
 
 ```
-CLAUDE.md                    <- AI reads this first
-project-brain/
-  product.md                <- What you're building & why
-  architecture.md           <- System design & data flow
-  stack.md                  <- Your exact tech stack
-  coding-standards.md       <- Your code style rules
-  agent-rules.md            <- How AI should behave
-  database.md               <- Schema & relationships
-  api.md                    <- Endpoints & contracts
-  roadmap.md                <- Current priorities
+📄 CLAUDE.md                    ← AI reads this FIRST
+📂 project-brain/
+   ├── 🎯 product.md            ← What you're building & why
+   ├── 🏗️ architecture.md       ← System design & data flow
+   ├── ⚙️ stack.md               ← Your exact tech stack
+   ├── 📏 coding-standards.md   ← Your code style rules
+   ├── 🤖 agent-rules.md        ← How AI should behave
+   ├── 🗄️ database.md           ← Schema & relationships
+   ├── 🔌 api.md                ← Endpoints & contracts
+   └── 🗺️ roadmap.md            ← Current priorities
 ```
 
-**Every AI tool that supports context files will understand your project instantly.**
+> **Every AI tool that supports context files will understand your project instantly.**
 
 ---
 
-## Works Everywhere
+## 🌍 Works Everywhere
+
+<table>
+<tr>
+<td>
+
+### 🖥️ IDEs
 
 | IDE | Status |
 |-----|--------|
-| VS Code | Full Support |
-| Cursor | Full Support |
-| Windsurf | Full Support |
-| VSCodium | Full Support |
-| Any VS Code Fork | Full Support |
+| VS Code | ✅ Full Support |
+| Cursor | ✅ Full Support |
+| Windsurf | ✅ Full Support |
+| VSCodium | ✅ Full Support |
+| Any VS Code Fork | ✅ Full Support |
+
+</td>
+<td>
+
+### 🤖 AI Tools
 
 | AI Tool | Compatibility |
 |---------|--------------|
-| Claude Code | Native |
-| Cursor AI | Native |
-| GitHub Copilot | Compatible |
-| Cody | Compatible |
-| Continue | Compatible |
+| Claude Code | 🟢 Native |
+| Cursor AI | 🟢 Native |
+| GitHub Copilot | 🟢 Compatible |
+| Cody | 🟢 Compatible |
+| Continue | 🟢 Compatible |
+
+</td>
+</tr>
+</table>
 
 ---
 
-## Installation
+## ⚡ Quick Start (60 Seconds)
 
-### From Marketplace (Recommended)
-
-1. Open VS Code / Cursor / Windsurf
-2. Go to Extensions (`Ctrl+Shift+X`)
-3. Search **"Project Brain"**
-4. Click **Install**
-5. Done. Open any project and click the brain icon.
-
-### From VSIX
-
-Download the latest `.vsix` from [Releases](https://github.com/malikmuhammadsaadshafiq-dev/project-brain/releases) and install manually.
+```
+Step 1  →  Open your project in VS Code
+Step 2  →  Click the 🧠 brain icon in the sidebar
+Step 3  →  Click "Initialize Project Brain"
+Step 4  →  Answer 4 simple questions
+Step 5  →  Done. Your AI now understands everything. 🎉
+```
 
 ---
 
-## Quick Start (60 Seconds)
+## 🔍 Smart Detection
 
-1. **Open your project**
-2. **Click the brain icon** in the sidebar
-3. **Click "Initialize Project Brain"**
-4. **Answer 4 simple questions** about your project
-5. **Done.** Your AI now understands everything.
+Project Brain **automatically detects** your stack:
 
+| File | Detected Stack |
+|------|---------------|
+| `package.json` | Node.js, React, Vue, Angular, Next.js, Express, NestJS |
+| `requirements.txt` | Python, FastAPI, Django, Flask |
+| `Cargo.toml` | Rust |
+| `go.mod` | Go |
 
-
----
-
-## Smart Detection
-
-Project Brain automatically detects your stack:
-
-- **package.json** -> Node.js, React, Vue, Angular, Next.js, etc.
-- **requirements.txt** -> Python, FastAPI, Django, Flask
-- **Cargo.toml** -> Rust
-- **go.mod** -> Go
-
-The wizard pre-fills everything. You just confirm.
+> The wizard pre-fills everything. You just confirm.
 
 ---
 
-## Features
+## ✨ Features
 
-### Sidebar Panel
-Quick access to all brain files. See status at a glance.
-
-### Setup Wizard
-Guided 4-step process. No guesswork.
-
-### Auto-Sync
-Add new files to `project-brain/`? Imports update automatically.
-
-### Regenerate
-Project evolved? One click to rebuild `CLAUDE.md`.
-
-### Stack Templates
-Framework-specific templates that match your conventions.
+| Feature | Description |
+|---------|-------------|
+| 🧠 **Sidebar Panel** | Quick access to all brain files at a glance |
+| 🧙 **Setup Wizard** | Guided 4-step process — no guesswork |
+| 🔄 **Auto-Sync** | Add files to `project-brain/`? Imports update automatically |
+| 🔁 **Regenerate** | Project evolved? One click to rebuild `CLAUDE.md` |
+| 📦 **Stack Templates** | Framework-specific templates matching your conventions |
 
 ---
 
-## Commands
+## 🎮 Commands
 
 Open Command Palette (`Ctrl+Shift+P`) and type:
 
 | Command | Description |
 |---------|-------------|
-| `Project Brain: Initialize` | Launch setup wizard |
-| `Project Brain: Regenerate Claude.md` | Rebuild main context file |
-| `Project Brain: Sync` | Update all imports |
+| `Project Brain: Initialize` | 🚀 Launch setup wizard |
+| `Project Brain: Quick Initialize` | ⚡ Auto-detect and initialize |
 
 ---
 
-## FAQ
+## 📊 The Math
 
-**Q: Does this slow down my IDE?**
-A: No. It activates on startup, checks for files, then sleeps. Zero performance impact.
+| | Without Project Brain | With Project Brain |
+|---|---|---|
+| ⏱️ Context per AI chat | 5 min | **0 min** |
+| 💬 AI chats per day | 10 | 10 |
+| 📉 Wasted daily | **50 min** | **0 min** |
+| 📉 Wasted weekly | **4+ hours** | **0 hours** |
 
-**Q: What if I already have a CLAUDE.md?**
-A: We detect it and won't overwrite. You can manually regenerate if you want.
-
-**Q: Does it work offline?**
-A: 100%. Everything is local. No external calls. No telemetry.
-
-**Q: Can I customize the templates?**
-A: Yes. Edit any generated file. Your changes are preserved on sync.
+### **That's 200+ hours per year you're getting back.** ⏰
 
 ---
 
-## Why Developers Choose Project Brain
+## ❓ FAQ
 
-> "I was mass-prompting context in every conversation. This fixed it permanently."
-> — *Senior Developer at a Fortune 500*
+<details>
+<summary><strong>Does this slow down my IDE?</strong></summary>
+No. It activates only when needed, then sleeps. Zero performance impact.
+</details>
 
-> "Setup took 45 seconds. Now Claude actually understands my monorepo."
-> — *Startup CTO*
+<details>
+<summary><strong>What if I already have a CLAUDE.md?</strong></summary>
+We detect it and won't overwrite. You can manually regenerate if you want.
+</details>
 
-> "The agent-rules.md alone saved me hours of AI debugging nonsense."
-> — *Solo Indie Hacker*
+<details>
+<summary><strong>Does it work offline?</strong></summary>
+100%. Everything is local. No external calls. No telemetry.
+</details>
 
----
-
-## The Math
-
-| Without Project Brain | With Project Brain |
-|----------------------|-------------------|
-| 5 min context per AI chat | 0 min context |
-| 10 AI chats per day | 10 AI chats per day |
-| **50 min wasted daily** | **0 min wasted** |
-| **4+ hours wasted weekly** | **0 hours wasted** |
-
-**That's 200+ hours per year you're getting back.**
+<details>
+<summary><strong>Can I customize the templates?</strong></summary>
+Yes. Edit any generated file. Your changes are preserved on sync.
+</details>
 
 ---
 
-## Free to Use
+## 💬 What Developers Say
 
-- Free for personal use
-- No accounts required
-- No tracking or telemetry
-- Works 100% offline
-- Just pure productivity
+> *"I was mass-prompting context in every conversation. This fixed it permanently."*
+> — **Senior Developer at a Fortune 500**
+
+> *"Setup took 45 seconds. Now Claude actually understands my monorepo."*
+> — **Startup CTO**
+
+> *"The agent-rules.md alone saved me hours of AI debugging nonsense."*
+> — **Solo Indie Hacker**
 
 ---
 
-## Support
+## 🆓 Free & Private
+
+- ✅ Free for personal use
+- ✅ No accounts required
+- ✅ No tracking or telemetry
+- ✅ Works 100% offline
+- ✅ Just pure productivity
+
+---
+
+## 🐛 Support
 
 Having issues? [Open an issue](https://github.com/malikmuhammadsaadshafiq-dev/project-brain/issues) on GitHub.
 
@@ -244,7 +269,7 @@ Having issues? [Open an issue](https://github.com/malikmuhammadsaadshafiq-dev/pr
 ---
 
 <p align="center">
-  <strong>Stop explaining. Start shipping.</strong>
+  <strong>Stop explaining. Start shipping. 🚀</strong>
 </p>
 
 <p align="center">
@@ -256,5 +281,5 @@ Having issues? [Open an issue](https://github.com/malikmuhammadsaadshafiq-dev/pr
 ---
 
 <p align="center">
-  Made with focus by developers who got tired of repeating themselves.
+  Made with 🧠 by developers who got tired of repeating themselves.
 </p>
