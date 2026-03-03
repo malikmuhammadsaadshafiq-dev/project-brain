@@ -2,7 +2,7 @@
 
 # 🧠 Project Brain
 
-### Stop repeating yourself to AI. Start shipping faster.
+### Stop repeating yourself to AI. Configure context once for Claude, Cursor, Windsurf, GitHub Copilot, and Gemini simultaneously.
 
 [![Version](https://img.shields.io/visual-studio-marketplace/v/ProjectBrainDefined.project-brain?style=for-the-badge&color=6C5CE7&label=VERSION)](https://marketplace.visualstudio.com/items?itemName=ProjectBrainDefined.project-brain)
 [![Downloads](https://img.shields.io/visual-studio-marketplace/d/ProjectBrainDefined.project-brain?style=for-the-badge&color=00B894&label=DOWNLOADS)](https://marketplace.visualstudio.com/items?itemName=ProjectBrainDefined.project-brain)
@@ -115,10 +115,14 @@ You: *Ships feature in 2 min* 🚀
 
 ## 📁 What Gets Generated
 
-One command creates your entire AI context system:
+One command generates native rule files for ALL major AI assistants, referencing a single source of truth:
 
 ```
-📄 CLAUDE.md                    ← AI reads this FIRST
+📄 CLAUDE.md                    ← Claude reads this
+📄 .cursorrules                 ← Cursor reads this
+📄 .windsurfrules               ← Windsurf reads this
+📄 .github/copilot-instructions.md ← Copilot reads this
+📄 GEMINI.md                    ← Gemini reads this
 📂 project-brain/
    ├── 🎯 product.md            ← What you're building & why
    ├── 🏗️ architecture.md       ← System design & data flow
@@ -128,6 +132,9 @@ One command creates your entire AI context system:
    ├── 🗄️ database.md           ← Schema & relationships
    ├── 🔌 api.md                ← Endpoints & contracts
    └── 🗺️ roadmap.md            ← Current priorities
+📂 tasks/
+   ├── 📝 todo.md               ← Active task planning
+   └── 🧠 lessons.md            ← AI self-improvement memory
 ```
 
 ---
@@ -136,11 +143,11 @@ One command creates your entire AI context system:
 
 | IDEs | AI Tools |
 |------|----------|
-| ✅ VS Code | 🟢 Claude Code (Native) |
-| ✅ Cursor | 🟢 Cursor AI (Native) |
-| ✅ Windsurf | 🟢 GitHub Copilot |
-| ✅ VSCodium | 🟢 Cody |
-| ✅ Any VS Code Fork | 🟢 Continue |
+| ✅ VS Code | 🟢 Claude Code |
+| ✅ Cursor | 🟢 Cursor AI |
+| ✅ Windsurf | 🟢 Windsurf Cascade |
+| ✅ VSCodium | 🟢 GitHub Copilot Chat |
+| ✅ Any VS Code Fork | 🟢 Gemini Code Assist |
 
 ---
 
