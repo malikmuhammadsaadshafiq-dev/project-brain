@@ -4,7 +4,7 @@
   "description": "Generate AI-native project context files for Claude, Cursor, Copilot & more",
   "version": "2.0.0",
   "license": "MIT",
-  "publisher": "ProjectBrain",
+  "publisher": "ProjectBrainDefined",
   "icon": "assets/icon.png",
   "homepage": "https://github.com/malikmuhammadsaadshafiq-dev/project-brain#readme",
   "bugs": {
