@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/malikmuhammadsaadshafiq-dev/project-brain/main/assets/icon.png" alt="Project Brain" width="128">
+  <img src="https://github.com/malikmuhammadsaadshafiq-dev/project-brain/raw/HEAD/assets/banner.png" alt="Project Brain" width="100%">
 </p>
 
 <h1 align="center">Project Brain</h1>
@@ -131,7 +131,9 @@ Download the latest `.vsix` from [Releases](https://github.com/malikmuhammadsaad
 4. **Answer 4 simple questions** about your project
 5. **Done.** Your AI now understands everything.
 
-
+<p align="center">
+  <img src="https://github.com/malikmuhammadsaadshafiq-dev/project-brain/raw/HEAD/assets/wizard-demo.gif" alt="Setup Wizard Demo" width="600">
+</p>
 
 ---
 

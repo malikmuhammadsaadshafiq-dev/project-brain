@@ -1,0 +1,40 @@
+Copyright (c) 2024 Malik Muhammad Saad Shafiq. All Rights Reserved.
+
+PROPRIETARY SOFTWARE LICENSE
+
+This software and associated documentation files (the "Software") are the
+proprietary property of Malik Muhammad Saad Shafiq ("Owner").
+
+PERMITTED USE:
+- You may download and install the Software for personal, non-commercial use
+- You may use the Software to generate project context files for your own projects
+
+RESTRICTIONS:
+You may NOT, without prior written permission from the Owner:
+- Copy, modify, merge, or create derivative works of the Software
+- Distribute, sublicense, sell, or transfer the Software to any third party
+- Reverse engineer, decompile, or disassemble the Software
+- Remove or alter any proprietary notices, labels, or marks on the Software
+- Use the Software for commercial purposes or in a commercial product
+- Host the Software on any public repository or distribution platform
+
+INTELLECTUAL PROPERTY:
+The Software, including its code, design, structure, and documentation, is
+protected by copyright and other intellectual property laws. The Owner retains
+all rights, title, and interest in and to the Software.
+
+TERMINATION:
+This license is effective until terminated. Your rights under this license
+will terminate automatically without notice if you fail to comply with any
+of its terms. Upon termination, you must destroy all copies of the Software.
+
+DISCLAIMER:
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED. IN NO EVENT SHALL THE OWNER BE LIABLE FOR ANY CLAIM, DAMAGES, OR
+OTHER LIABILITY ARISING FROM THE USE OF THE SOFTWARE.
+
+GOVERNING LAW:
+This license shall be governed by and construed in accordance with applicable
+copyright and intellectual property laws.
+
+For licensing inquiries, contact: malikmuhammadsaadshafiq@gmail.com
